@@ -44,7 +44,9 @@ module.exports = function(grunt) {
         dist: {
           options: {
             compile: false,
-            compress: true
+            compress: true,
+            noIDs: false,
+            noUniversalSelectors: true
           },
           files: {
             'css/mini.css' : 'css/style.css'
