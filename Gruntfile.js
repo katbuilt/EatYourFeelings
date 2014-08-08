@@ -7,13 +7,12 @@ module.exports = function(grunt) {
       dist: {
         files: {    //where files go to or from
             'dev/css/style.css': 'dev/scss/style.scss',   // destination: source
-            'dev/css/smiley.css': 'dev/scss/smiley.scss'
-      }
+       }
       }
      },
     // JShint
     jshint: {
-      files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+      files: ['Gruntfile.js', 'dev/**/*.js'],
       options: {
         // options here to override JSHint defaults
         globals: {
@@ -27,12 +26,8 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: ['dev/scss/*.scss', '<%= jshint.files %>'],
-        tasks: ['sass', 'jshint', 'autoprefixer']
+        tasks: ['sass', 'jshint', 'autoprefixer', 'recess']
       },
-       jade: {
-                files: ['jade/*.jade'], // watch jade files in jade folder
-                tasks: ['jade']
-       },
        options: {
           livereload: true
        }
@@ -44,7 +39,18 @@ module.exports = function(grunt) {
       no_dest: {
         src: 'dev/css/style.css'
       }
-    }
+    },
+    recess: {
+        dist: {
+          options: {
+            compile: false,
+            compress: true
+          },
+          files: {
+            'css/mini.css' : 'css/style.css'
+          }
+        }
+       }
     
   });
 
@@ -53,8 +59,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-autoprefixer');
-
-  grunt.registerTask('prefixr', ['autoprefixer']);
+  grunt.loadNpmTasks('grunt-recess');
 
   grunt.registerTask('default', ['jshint', 'sass','watch']);
 
