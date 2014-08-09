@@ -26,7 +26,7 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: ['dev/scss/*.scss', '<%= jshint.files %>'],
-        tasks: ['sass', 'jshint', 'autoprefixer', 'recess']
+        tasks: ['sass', 'jshint', 'autoprefixer', /*'recess'*/]
       },
        options: {
           livereload: true
@@ -39,19 +39,19 @@ module.exports = function(grunt) {
       no_dest: {
         src: 'dev/css/style.css'
       }
-    },
-    recess: {
-        dist: {
-          options: {
-            compile: false,
-            compress: true,
-            noIDs: false,
-            noUniversalSelectors: true
-          },
-          files: {
-            'css/mini.css' : 'css/style.css'
-          }
-        }
+    // },
+    // recess: {
+    //     dist: {
+    //       options: {
+    //         compile: false,
+    //         compress: true,
+    //         noIDs: false,
+    //         noUniversalSelectors: true
+    //       },
+    //       files: {
+    //         'css/mini.css' : 'css/style.css'
+    //       }
+    //     }
        }
     
   });
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.loadNpmTasks('grunt-recess');
+  // grunt.loadNpmTasks('grunt-recess');
 
   grunt.registerTask('default', ['jshint', 'sass','watch']);
 

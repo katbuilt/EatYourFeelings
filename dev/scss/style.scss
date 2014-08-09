@@ -32,405 +32,46 @@ body{
     position: relative;
 }
 
-strong {
-    font-weight: 700;
-}
-
-.contain {
-    max-width: 1440px;
-    margin: 0 auto;
-    font-family: $fontStack;
-
-    .aside{
-        width: 30%;
-        float: left;
-        // background-color: blue;
-        a{
-           
-            .preview{
-                position: relative;
-                height: 200px;
-                width: 100%;
-                border: 1px solid #000;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                -webkit-transition: 0.2s ease-in-out;
-                -o-transition: 0.2s ease-in-out;
-                transition: 0.2s ease-in-out;
-                .previewDetails{
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    color: #eee;
-                    text-shadow: 1px 1px 2px #000;
-                    background: linear-gradient(transparent, #380909);
-                    p{
-                        margin: 0;
-                        padding-left: 15px;
-                    }
-                    .speaker{
-                        font-size: 15px;
-                    }
-                    .title{
-                        font-size: 25px; 
-                        font-weight: 600;
-                        padding-bottom: 15px;   
-                    }
-                }
-                &:hover{
-                    // opacity: 0.7;
-                     filter: sepia(0) saturate(2);
-                     transition: all 0.5s;
-                }
-                
-            }
-
-            .prev1{
-                background-image: url(../images/graham-hill.png);
-            }
-            .prev2{
-                background-image: url(../images/barry-schwartz.png);
-            }
-            .prev3{
-                background-image: url(../images/neil-pasricha.png);
-            }
-            .prev4{
-                background-image: url(../images/shawn-achor.png);
-            }
-            .prev5{
-                background-image: url(../images/stefan-sagmeister.png);
-            }
-        }
-    }
-
-
-}
 
 //******************************
 // MAIN
 //******************************
 
-.thisWeek {
-    font-weight: 300;
-    font-size: 50px;
-    margin-top: -50px;
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+.visa{background-image:url(http://i.imgur.com/lXzJ1eB.png);}
+.mastercard{background-image:url(http://i.imgur.com/SJbRQF7.png);}
+
+.cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100px;height:70px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
 }
 
-.tedTopic {
-    font-family: $fancyScript;
-    color: $footerColor;
-    font-size: 113px;
-    line-height: 101px;
-
-}
-
-.main{
-    overflow: hidden;
-    width: 70%;
-    // height: 1000px;
-    float: right;
-    background-color: #fff;
-    padding: 7%;
-    padding-bottom: 0;
-    font-family: $fontStack;
-    font-weight: 400;
-    font-size: 0.85em;
-
-    .welcomeMessage{
-        display: block;
-
-
-        .bigArrow{
-            position: relative;
-            left: 120%;
-            width: 0;
-            height: 0;
-            border-top: 200px solid transparent;
-            border-right: 400px solid $footerColor;
-            border-bottom: 200px solid transparent;
-           
-           // animations
-
-            -webkit-animation: arrowAnimation ease-in-out 0.7s forwards; /* Chrome, Safari, Opera */
-            -webkit-animation-delay: 1.0s; /* Safari and Chrome */
-            animation: arrowAnimation ease-in-out 0.7s forwards;
-            animation-delay: 1.0s;
-
-
-            p{
-                position: absolute;
-                width: 350px;
-                color: #fdf6f0;
-                top: -162px;
-                left: 25px;
-                text-align: right;
-                font-family: $fancyScript;
-                font-size: 73px;
-                line-height: 68px;
-            }
-        }
-    }
-    #videoBox{
-        position: relative;
-        -webkit-transition: 0.2s ease-in-out;
-        -o-transition: 0.2s ease-in-out;
-        transition: 0.2s ease-in-out;   
-        p{
-            position: absolute;
-            left: 20px;
-            bottom: 10px;
-            color: #fff;
-            text-shadow: 1px 1px 2px #000;
-        }
-        &:hover{
-            // opacity: 0.7;
-             filter: saturate(1.8);
-            -webkit-transition: 0.2s ease-in-out;
-            -o-transition: 0.2s ease-in-out;
-            transition: 0.2s ease-in-out;
-        }
-    }
-
-}
-
-
-//animation stuff
-
-    /* Chrome, Safari, Opera */
-    @-webkit-keyframes arrowAnimation {
-    0%  {left: 120%; top:0px;}
-    70%  {left: 10%; top:0px;}
-    100%  {left: 20%; top:0px;}
-    }
-
-    /* Standard syntax */
-    @keyframes myfirst {
-    0%  {left: 120%; top:0px;}
-    70%  {left: 0%; top:0px;}
-    100%  {left: 10%; top:0px;}
-    }
-
-.full {
-    width: 100%;
-}
-
-.vidThumb {
-    width: 100%;
-}
-
-.synopsis {
-    font-weight: 300;
-    font-size: 1.9em;
-}
-
-.vidSpeaker {
-    float: left;
-    width: 100%;
-    background-color: #e3e3e3;
-    padding: 15px;
-    h2{
-        font-size: 30px;
-        margin-top: 0;
-    }
-    h3 {
-        text-transform: uppercase;
-        font-size: 18px;
-        margin-left: 20px;
-    }
-    .speakerPic {
-        float: left;
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-        margin-right: 15px;
-    }
-}
-
-
-.overlayOpaqueBackground{
-    // display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    min-height: 100%;
-    // background-color: rgba(40,40,40,0.8);
-    // background-color: rgba(256,256,256,0);
-    background-color: #282828;
-    opacity: 0;
-    z-index: 99;
-}
-    
-
-
-.overlay{
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    min-height: 100%;
-    // background-color: rgba(40,40,40,0.8);
-    // background-color: rgba(256,256,256,0);
-    // background-color: #282828;
-    // opacity: 0;
-    z-index: 100;
-    .iframeContainer{ 
-        position: relative;
-        display: block;
-        width: 854px;
-        margin: 0 auto;
-        // .close{
-        //     display: block;
-        //     // .closeButton{
-        //     //     position: absolute;
-        //     //     top: -40px;
-        //     //     left: 0;
-        //     //     width: 20px;
-        //     //     height: 20px;
-        //     //     fill: #fff;
-        //     //     &:hover{
-        //     //         fill: #00b680;
-        //     //     }
-        //     // }
-        // }
-        .overlayVideoFrame{
-            display: none;
-            // visibility: hidden;
-            // width: 85.4px;
-            // height: 48px;
-            // margin-left: 50%;
-            // margin-top: 30%;
-            background-color: #fff;
-
-            .videoEmbed{ 
-                display: none;
-                display: block;
-                margin: 0 auto;
-                margin-top: 15%;
-                border: 2px solid #fff;
-
-                //full dimensions 854x480
-            }
-        } 
-    }
-}
-
-.visible{
-    display: block;
-    // visibility: visible;
-}
-
-.notVisible{
-    display: none;
-}
-
-.fullSize{
-    width: 854px;
-    height: 480px;
-    -webkit-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
-}
-
-.blurFilter{
-    // background: rgba(40,40,40,0.9); 
-
-    filter:blur(3px);
-    -o-filter:blur(3px);
-    -ms-filter:blur(3px);
-    -moz-filter:blur(3px);
-    -webkit-filter:blur(3px); 
-
-    // -webkit-transition: 0.4s;
-    // -o-transition: 0.4s;
-    // transition: 0.4s;
-}
-
-.backgroundColor{
-    // background-color: rgba(40,40,40,0.9); 
-    background-color: #282828;
-    opacity: 0;
-    // -webkit-transition: 0.5s ease-in-out;
-    // -o-transition: 0.5s ease-in-out;
-    // transition: 0.5s ease-in-out;
-}
-
-//******************************
-// ARROW ANIMATION
-//******************************
-
-@keyframes slideLeft {
-    0% { right: -500px; }
-    100% { right: 900px;}
-}
-
-
-//******************************
-// FOOTER
-//******************************
-
-footer {
-    background-color: $footerColor;
-    max-height: 200px;
-    margin: 0;
-    padding: 0;
-    padding-top: 15px;
-    position: relative;
-
-    .third { // divides the footer in 3 columns
-        width: 33.33%;
-        float: left;
-    }
-
-    .weekTheme {
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        font-family: $fancyScript; 
-        color: $footerText;
-        text-shadow: 5px 3px #940f08;
-        font-size: 72px;
-
-        a, a:hover, a:visited {
-            text-decoration: none;
-            color: $footerText;
-        }
-    }
-
-    .footerinfo {
-        position: absolute;
-        z-index: 1;
-        width: 30%;
-        max-height: 200px;
-        right: 30px;
-        top: 30px;
-        font-family: $fontStack;
-        font-weight: 300;
-        color: $footerText;
-        text-align: left;
-        vertical-align: middle;
-            a, a:visited {
-                text-decoration: none;
-                color: $footerText;
-                font-weight: 300;
-                border-bottom: 1px dotted $footerText;
-            }
-
-            a:hover, a:active, a:focus, a:visited:hover {
-                background-color: $footerText;
-                color: $footerColor;
-                padding: 0 8px;
-                font-weight: 700;
-                transition: all 0.25s; 
-            }
-
-            b {
-                font-weight: 400;
-            }
-    }
-}
+/* Extras */
+a:visited{color:#888}
+a{color:#444;text-decoration:none;}
+p{margin-bottom:.3em;}

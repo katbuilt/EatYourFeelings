@@ -1,12 +1,22 @@
+
+/* NOTE TO SELF */
 // Yummly app id 68ac39de
 // Yummly auth key 3f06f41e76c83498e7053f890bef8d89
+// eatFeels.getRecipes = the search function
+
 
 var eatFeels = function() {};
 
 /* GLOBAL VARIABLES */
 
-	eatFeels.appID = "68ac39de";
-	eatFeels.authKey = "3f06f41e76c83498e7053f890bef8d89";
+	eatFeels.appID = '68ac39de';
+	eatFeels.authKey = '3f06f41e76c83498e7053f890bef8d89';
+
+	//three search parameters
+	eatFeels.userMood = 'happy'; // happy, sad, neutral
+	eatFeels.userNum = '1'; // solo, pair, group
+	eatFeels.userTime = 'under5'; // under 5 mins, under 30 mins, over 30 mins
+
 
 /********************/
 
@@ -14,7 +24,7 @@ var eatFeels = function() {};
 
 	eatFeels.init = function(){
 
-		eatFeels.getRecipes('stew');
+		eatFeels.getRecipes(/*not sure what to put here*/);
 
 	};
 
@@ -32,39 +42,44 @@ var eatFeels = function() {};
 		     format: 'jsonp',
 		   	 _app_id: eatFeels.appID,
 		   	 _app_key: eatFeels.authKey,
-		     q: query, //search phrase
-			 // allowedCuisine: 'French',		     
+		   	 rating: 5,
+		   	 maxResult: 20,
+			 requirePictures: true,	  
+		     // q: query, //search phrase
+		     // maxTotalTimeInSeconds: eatFeels.userTime, //time they want
+
 		   },
 		   dataType: 'jsonp',
-		   success: function(result){
+		   success: function(response){
+		   	// var nameofVar = result; //retun
 		     console.log('it works');
-		     console.log(result); 
+		     eatFeels.displayInfo(response);
 		   }
 		 });	
 
-	}
+	};
 
 /********************/
-eatFeels.displayPieces = function(data){
-	//$.each loops over each piece of data,
-    $.each(data, function(i, piece) {
-    	console.log(piece.title);
 
-    	var title = $('<h2>').text(piece.title);
-    	var artist = $('<p>').addClass('artist').text(piece.principalOrFirstMaker);
-    	var image = $('<img>').attr('src', piece.webImage.url);
-    	var artPiece = $('<div>').addClass('piece').append(image, title, artist); //combines the preceding three variables
 
-    	//creates the html structure from the combined variables
-    	$('#artwork').append(artPiece);
-    })
+/* RETURN THE NAME OF RESULTS */
+
+	eatFeels.displayInfo=function(data){
+
+	for(var i=0; i<data.matches.length; i++){
+	$('.results').append('<li>' + data.matches[i].recipeName + '</li>');
+	$('#recipe').append('<img src=' + data.matches[i].smallImageUrls[0].replace('=s90','') + '>');
+
+	}
 };
 
-eatFeels.updateTitle = function(subject) {
-	$('#page-title').find('span').text(subject);
-}
+/********************/
 
 
+/* INJECT AND STYLE RESULTS */
+
+
+/********************/
 
 /* DOCUMENT READY */
 
