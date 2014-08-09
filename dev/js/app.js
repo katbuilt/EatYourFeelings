@@ -4,8 +4,7 @@
 // Yummly auth key 3f06f41e76c83498e7053f890bef8d89
 // eatFeels.getRecipes = the search function
 
-
-var eatFeels = function() {};
+var eatFeels = {};
 
 /* GLOBAL VARIABLES */
 
@@ -13,7 +12,7 @@ var eatFeels = function() {};
 	eatFeels.authKey = '3f06f41e76c83498e7053f890bef8d89';
 
 	//three search parameters
-	eatFeels.userMood = 'happy'; // happy, sad, neutral
+	// eatFeels.userMood = $('input:checked').attr('value' ); // happy, sad, neutral
 	eatFeels.userNum = '1'; // solo, pair, group
 	eatFeels.userTime = 'under5'; // under 5 mins, under 30 mins, over 30 mins
 
@@ -24,12 +23,25 @@ var eatFeels = function() {};
 
 	eatFeels.init = function(){
 
-		eatFeels.getRecipes(/*not sure what to put here*/);
+		// eatFeels.keywordCheck();
+		eatFeels.userMood = $('input:checked').val();
+		console.log(eatFeels.userMood);
+		eatFeels.getRecipes();
 
 	};
 
 /********************/
 
+/* DEFINING 'query' ARGUMENT for keyword search */
+
+	// eatFeels.keywordCheck = function() {
+
+	// 	// 
+	// 	if () {
+
+	// 	} else {}
+
+/********************/
 
 /* SEARCHING FOR RECIPES */
 
@@ -45,7 +57,7 @@ var eatFeels = function() {};
 		   	 rating: 5,
 		   	 maxResult: 20,
 			 requirePictures: true,	  
-		     // q: query, //search phrase
+		     q: query //search phrase
 		     // maxTotalTimeInSeconds: eatFeels.userTime, //time they want
 
 		   },
@@ -62,7 +74,7 @@ var eatFeels = function() {};
 /********************/
 
 
-/* RETURN THE NAME OF RESULTS */
+/* RETURN THE SEARCh RESULTS */
 
 	eatFeels.displayInfo=function(data){
 
@@ -84,7 +96,13 @@ var eatFeels = function() {};
 /* DOCUMENT READY */
 
 	$(function() {
-		eatFeels.init();
+		console.log('script is running');
+		// eatFeels.init();
+		// on click of the button
+		$('button').on('click', function() {
+			event.preventDefault();
+			eatFeels.init();
+		});
 	});
 
 /********************/
