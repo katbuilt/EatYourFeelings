@@ -23,6 +23,10 @@ var eatFeels = {};
 
 	};
 
+/* INTERACTIVE UI ELEMENTS */
+
+
+/********************/
 
 /********************/
 
@@ -58,6 +62,9 @@ var eatFeels = {};
 					     console.log('running SUCCESS with serving size ' + userServings);
 					     eatFeels.displayInfo(response);
 						 console.log(response);
+						 if(response.matches.length <1){
+						 	alert('no recipes found');
+						 }
 					   }
 					 });	
 
@@ -83,6 +90,9 @@ var eatFeels = {};
 					     console.log('running SUCCESS with sad loser party of 3 or more');
 					     eatFeels.displayInfo(response);
 					     console.log(response);
+					     if(response.matches.length <1){
+					     	alert('no recipes found');
+					     }
 					   }
 					 });
 
@@ -108,6 +118,9 @@ var eatFeels = {};
 					     console.log('running SUCCESS with happy date night');
 					     eatFeels.displayInfo(response);
 					     console.log(response);
+					     if(response.matches.length <1){
+					     	alert('no recipes found');
+					     }
 					   }
 					 });
 
@@ -134,6 +147,9 @@ var eatFeels = {};
 					     console.log('running SUCCESS with sadness for two');
 					     eatFeels.displayInfo(response);
 					     console.log(response);
+					     if(response.matches.length <1){
+					     	alert('no recipes found');
+					     }
 					   }
 					 });
 
@@ -159,6 +175,9 @@ var eatFeels = {};
 					     console.log('running SUCCESS with solo happiness');
 					     eatFeels.displayInfo(response);
 					     console.log(response);
+					     if(response.matches.length <1){
+					     	alert('no recipes found');
+					     }
 					   }
 					 });
 
@@ -187,7 +206,6 @@ var eatFeels = {};
 					     if(response.matches.length <1){
 					     	alert('no recipes found');
 					     }
-					     $('.results').empty();
 					   }
 					 });
 
@@ -195,7 +213,7 @@ var eatFeels = {};
 			} else {
 
 				alert('you missed a field! check your fields again.');
-				$('input').empty();
+				$('.results').empty();
 
 			}
 	};
@@ -209,8 +227,8 @@ var eatFeels = {};
 
 	for(var i=0; i<data.matches.length; i++){
 		$('.results').append('<div class="box box' + i + '"></div>');
-		$('.box' + i).append('<p>' + data.matches[i].recipeName + '</p>');
 		$('.box' + i).append('<img src=' + data.matches[i].smallImageUrls[0].replace('=s90','') + '>');
+		$('.results').append('<p>' + data.matches[i].recipeName + '</p>');
 		}
 	};
 

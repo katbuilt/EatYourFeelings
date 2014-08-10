@@ -1,21 +1,19 @@
 // useable font weights: Oswald Normal 400, Light 300, Bold 700
 
-// INCLUDES
 
 // VARIABLES
 
 $fontStack: 'Oswald', Helvetica, Arial, sans-serif;
 $fancyScript: 'Yellowtail', cursive;
-$footerColor: #c0392b;
-$footerText: #fdf6f0;
 
-// MIXINS
-
+$background-bottom: #fbf6c6;
+$background-top: #61aba1;
 
 
+//******************************
+// CSS RESET SHOULD BE LINKED
+//******************************
 
-article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
-input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
 
 *, *:before, *:after {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
@@ -28,13 +26,109 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
     height: 0;
     clear: both;
 }
-body{
-    position: relative;
-}
+
+    body {
+      background: #e6e6d8 url('https://dl.dropboxusercontent.com/s/t0gu051d08sei65/bg-retro-noise.png');
+      color: #121212;
+    }
+
+
+//******************************
+// FANCY LETTERING HEADER
+//******************************
+
+    // header {
+    //     position: relative;
+    //     left: 10px;
+    // }
+    /* fontawesome */
+    [class*="fontawesome-"]:before {
+      font-family: 'FontAwesome', sans-serif;
+    }
+
+    /* fontawesome */
+    [class*="fontawesome-"]:before {
+      font-family: 'FontAwesome', sans-serif;
+    }
+
+    section.fancytext {
+      position: absolute;
+      width: 100%;
+      min-width: 700px;
+      text-align: center;
+      top: 30%;
+      margin-top: -55px;      
+      // margin-left: -200px;
+        h1, h3 {
+          transform: matrix(1, -0.15, 0, 1, 0, 0);
+          -ms-transform: matrix(1, -0.15, 0, 1, 0, 0);
+          -webkit-transform: matrix(1, -0.15, 0, 1, 0, 0);
+        }
+
+        h1 {
+          font-family: "Oswald", Sans-serif;
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: 80px;
+          letter-spacing: 2px;
+          text-shadow: 4px 5px #e6e6d8, 6px 7px #c6a39a;
+          margin-bottom: 25px;
+        }
+
+        h1 span {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        span.star {
+          font-size: 20px;
+        }
+
+        h3.bordered {
+          font-family: "Open Sans", Sans-serif;
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: 25px;
+          letter-spacing: 0.33em;
+          margin-bottom: 10px;  
+          position: relative;
+        }
+
+        h3.bordered:before, h3.bordered:after {
+          content: " ";
+          position: absolute;
+          width: 210px;
+          height: 4px;
+          border-top: 2px solid #121212;
+          border-bottom: 2px solid #121212;
+          padding-bottom: 5px;
+        }
+
+        h3.bordered:before {
+          margin: 10px 0 0 -226px;
+        }
+
+        h3.bordered:after {
+          margin: 10px 0 0 10px;
+        }
+
+        h3.bordered span {
+          font-size: 18px;
+          letter-spacing: 3px;
+        }
+    }
+
 
 //******************************
 // MAIN
 //******************************
+
+main {
+    max-width: 1000px;
+    padding: 5%;
+    margin: 0 auto;
+    margin-top: 600px;
+}
 
 .box {
     display: inline-block;
@@ -46,7 +140,7 @@ body{
     height: 240px;
     overflow: hidden;
     img{
-        100%
+        width: 100%;
     }
     p{
         margin: 0;
@@ -55,13 +149,6 @@ body{
 
 #recipe {
     width: 100%;
-}
-
-img{
-    width: 100%;
-
-    margin: 0 auto;
-    /*position: relative;*/
 }
 
 input{
