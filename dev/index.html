@@ -11,24 +11,24 @@
 <main>
 	<h1>Treat Yo'self. Eat Yo' Feelings.</h1>
 
-	<!-- images and names return here -->
-		<div class="results">
-
-		</div>
-
-	<!-- recipe div -->
-		<div class="" id="recipe">
-			
-		</div>
 
 	<!-- query form -->
 		<form id="#eatfeelsform" name="eatfeels">
 
 		<input type="radio" name="usermood" value="sad" /> sad :(
 		<input type="radio" name="usermood" value="happy" /> happy :)
+		
+		<h3>How many people?</h3>
 		<input type="range" name="personslider" id="servingsize" min="1" max="3" value="1">
 		
-		<button name="pushit" id="#eatmyfeels" value="submit">
+		<h3>How much effort</h3>
+		<input type="radio" name="preptime" value="600" /> lazy &lt; 10 minutes
+		<input type="radio" name="preptime" value="1800" /> around half an hour
+		<input type="radio" name="preptime" value="5400" /> work it
+
+		<h3>Ok click to submit</h3>
+		<button name="pushit" id="#eatmyfeels" value="submit">Push it</button>
+		<input type="reset" name="pullit" value="lets reset">
 <!-- 			<p>Previously:</p>
 			<div>
 				<input id="a1" type="radio" name="a" value="visa" />
@@ -44,6 +44,15 @@
 				<label class="drinkcard-cc mastercard"for="mastercard"></label>
 			</div> -->
 		</form>
+	<!-- images and names return here -->
+		<div class="results" id="results">
+
+		</div>
+
+	<!-- recipe div -->
+		<div class="" id="recipe">
+			
+		</div>
 
 </main>
 
