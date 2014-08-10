@@ -11,35 +11,18 @@ var eatFeels = {};
 	eatFeels.appID = '68ac39de';
 	eatFeels.authKey = '3f06f41e76c83498e7053f890bef8d89';
 
-	//three search parameters
-	// eatFeels.userMood = $('input:checked').attr('value' ); // happy, sad, neutral
-	eatFeels.userNum = '1'; // solo, pair, group
-	eatFeels.userTime = 'under5'; // under 5 mins, under 30 mins, over 30 mins
-
-
 /********************/
 
 /* INIT FUNCTION */
 
 	eatFeels.init = function(){
 
-		// eatFeels.keywordCheck();
-		eatFeels.userMood = $('input:checked').val();
-		console.log(eatFeels.userMood);
+		eatFeels.userMood = $('input[name=usermood]:checked').val();
+		console.log('the user selected ' + eatFeels.userMood);
 		eatFeels.getRecipes();
 
 	};
 
-/********************/
-
-/* DEFINING 'query' ARGUMENT for keyword search */
-
-	// eatFeels.keywordCheck = function() {
-
-	// 	// 
-	// 	if () {
-
-	// 	} else {}
 
 /********************/
 
@@ -47,43 +30,80 @@ var eatFeels = {};
 
 	eatFeels.getRecipes = function(query) {
 
-		$.ajax({
-		   url: 'http://api.yummly.com/v1/api/recipes',
-		   type: 'GET',
-		   data: {
-		     format: 'jsonp',
-		   	 _app_id: eatFeels.appID,
-		   	 _app_key: eatFeels.authKey,
-		   	 rating: 5,
-		   	 maxResult: 20,
-			 requirePictures: true,	  
-		     q: query //search phrase
-		     // maxTotalTimeInSeconds: eatFeels.userTime, //time they want
+		var userServings = $('#servingsize').val();
+		var userTime = $().val();
 
-		   },
-		   dataType: 'jsonp',
-		   success: function(response){
-		   	// var nameofVar = result; //retun
-		     console.log('it works');
-		     eatFeels.displayInfo(response);
-		   }
-		 });	
+			console.log('keyword check is running');
+			console.log('searching for ' + userServings + ' servings');
+			// if statements to detect results
+
+			if (eatFeels.userMood == 'happy') {
+				console.log('searching for happy foods...');
+
+				$.ajax({
+				   url: 'http://api.yummly.com/v1/api/recipes?'+'&maxTotalTimeInSeconds='+userTime,
+				   type: 'GET',
+				   data: {
+				     format: 'jsonp',
+				   	 _app_id: eatFeels.appID,
+				   	 _app_key: eatFeels.authKey,
+				   	 rating: 5,
+				   	 maxResult: 12,
+					 requirePictures: true,
+					 q: 'party'
+				   },
+				   dataType: 'jsonp',
+				   success: function(response){
+				     console.log('running SUCCESS with happy party of 1');
+				     eatFeels.displayInfo(response);
+				   }
+				 });	
+
+			} else if (eatFeels.userMood == 'sad') {
+				console.log('searching for sad foods...');
+
+				$.ajax({
+				   url: 'http://api.yummly.com/v1/api/recipes?',
+				   type: 'GET',
+				   data: {
+				     format: 'jsonp',
+				   	 _app_id: eatFeels.appID,
+				   	 _app_key: eatFeels.authKey,
+				   	 rating: 5,
+				   	 maxResult: 12,
+					 requirePictures: true,
+					 q: 'better'
+
+				   },
+				   dataType: 'jsonp',
+				   success: function(response){
+				     console.log('running SUCCESS with sad loser party of 1');
+				     eatFeels.displayInfo(response);
+				   }
+				 });
+
+			} else {
+
+				alert('you need to select a mood first!');
+				$('input').empty();
+
+			}
+		
 
 	};
 
 /********************/
 
 
-/* RETURN THE SEARCh RESULTS */
+/* RETURN THE SEARCH RESULTS */
 
 	eatFeels.displayInfo=function(data){
 
 	for(var i=0; i<data.matches.length; i++){
-	$('.results').append('<li>' + data.matches[i].recipeName + '</li>');
-	$('#recipe').append('<img src=' + data.matches[i].smallImageUrls[0].replace('=s90','') + '>');
-
-	}
-};
+		$('.results').append('<li>' + data.matches[i].recipeName + '</li>');
+		$('#recipe').append('<img src=' + data.matches[i].smallImageUrls[0].replace('=s90','') + '>');
+		}
+	};
 
 /********************/
 
