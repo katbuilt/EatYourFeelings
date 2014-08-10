@@ -36,7 +36,7 @@ var eatFeels = {};
 			console.log('keyword check is running');
 			console.log('searching for ' + userServings + ' servings');
 			
-		// KEYWORD CHECKS
+/* KEYWORD CHECKS */
 			// if HAPPY and a GROUP
 				if (eatFeels.userMood == 'happy' && userServings == 3) {
 					console.log('searching for happy group foods...');
@@ -176,7 +176,7 @@ var eatFeels = {};
 					   	 rating: 5,
 					   	 maxResult: 12,
 						 requirePictures: true,
-						 q: 'better than sex'
+						 q: 'better than'
 
 					   },
 					   dataType: 'jsonp',
@@ -184,6 +184,10 @@ var eatFeels = {};
 					     console.log('running SUCCESS with lonely sadness');
 					     eatFeels.displayInfo(response);
 					     console.log(response);
+					     if(response.matches.length <1){
+					     	alert('no recipes found');
+					     }
+					     $('.results').empty();
 					   }
 					 });
 
@@ -204,8 +208,9 @@ var eatFeels = {};
 	eatFeels.displayInfo=function(data){
 
 	for(var i=0; i<data.matches.length; i++){
-		$('.results').append('<li>' + data.matches[i].recipeName + '</li>');
-		$('#recipe').append('<img src=' + data.matches[i].smallImageUrls[0].replace('=s90','') + '>');
+		$('.results').append('<div class="box box' + i + '"></div>');
+		$('.box' + i).append('<p>' + data.matches[i].recipeName + '</p>');
+		$('.box' + i).append('<img src=' + data.matches[i].smallImageUrls[0].replace('=s90','') + '>');
 		}
 	};
 
@@ -217,8 +222,8 @@ var eatFeels = {};
 		console.log('script is running');
 		// eatFeels.init();
 		// on click of the button
-		$('button').on('click', function() {
-			event.preventDefault();
+		$('button').on('click', function(e) {
+			e.preventDefault();
 			$('#results').empty();
 			$('#recipe').empty();
 			eatFeels.init();

@@ -136,6 +136,25 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 body {
   position: relative; }
 
+.box {
+  background: blue;
+  display: inline-block;
+  float: left;
+  width: 33.3%;
+  border: 1px solid white; }
+
+#recipe {
+  width: 100%; }
+
+img {
+  width: 100%;
+  /*border-radius: 50%;*/
+  margin: 0 auto;
+  /*position: relative;*/ }
+
+input {
+  margin: 20px; }
+
 .cc-selector input {
   margin: 0;
   padding: 0;
@@ -185,3 +204,14 @@ a {
 
 p {
   margin-bottom: .3em; }
+
+.box {
+  display: inline-block;
+  width: 30%;
+  background: blue;
+  border: 1px solid #fff;
+  float: left;
+  height: 300px;
+  overflow: scroll; }
+  .box p {
+    margin: 0; }

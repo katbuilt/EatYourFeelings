@@ -32,6 +32,42 @@ body{
     position: relative;
 }
 
+//******************************
+// MAIN
+//******************************
+
+.box {
+    display: inline-block;
+    width: 30%;
+    background: blue;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    float: left;
+    height: 240px;
+    overflow: hidden;
+    img{
+        100%
+    }
+    p{
+        margin: 0;
+    }
+}
+
+#recipe {
+    width: 100%;
+}
+
+img{
+    width: 100%;
+
+    margin: 0 auto;
+    /*position: relative;*/
+}
+
+input{
+    margin: 20px;
+}
+
 
 //******************************
 // MAIN
