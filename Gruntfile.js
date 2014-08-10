@@ -7,6 +7,7 @@ module.exports = function(grunt) {
       dist: {
         files: {    //where files go to or from
             'dev/css/style.css': 'dev/scss/style.scss',   // destination: source
+            'dev/css/reset.css': 'dev/scss/reset.scss',
        }
       }
      },
