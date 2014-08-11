@@ -4,197 +4,234 @@
 // VARIABLES
 
 $fontStack: 'Oswald', Helvetica, Arial, sans-serif;
-$fancyScript: 'Yellowtail', cursive;
 
-$background-bottom: #fbf6c6;
-$background-top: #61aba1;
+$gradientdown: #fbf6c6;
+$gradientup: #61aba1;
+$cutegray: #524e4f;
+$cream: #fffed8;
 
 
-//******************************
-// CSS RESET SHOULD BE LINKED
-//******************************
+
+//************************************//
+// CSS RESET SHOULD BE LINKED IN HTML //
+//************************************//
 
 
 *, *:before, *:after {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
  }
 
-.clearfix:after {
-    content: " ";
-    visibility: hidden;
-    display: block;
-    height: 0;
-    clear: both;
+body {
+
+  background-color: $gradientdown;
+  color: #121212;
 }
 
-    body {
-      background: #e6e6d8 url('https://dl.dropboxusercontent.com/s/t0gu051d08sei65/bg-retro-noise.png');
-      color: #121212;
-    }
-
+.container {
+	width: 900px;
+}
 
 //******************************
 // FANCY LETTERING HEADER
 //******************************
+	
+	section.headingbg {
+		background: -moz-linear-gradient($gradientup, $gradientdown);
+		background: -webkit-linear-gradient($gradientup, $gradientdown);
+		background: linear-gradient($gradientup, $gradientdown);
+		height: 350px;
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+	/* fontawesome */
+	[class*="fontawesome-"]:before {
+	  font-family: 'FontAwesome', sans-serif;
+	}
 
-    // header {
-    //     position: relative;
-    //     left: 10px;
-    // }
-    /* fontawesome */
-    [class*="fontawesome-"]:before {
-      font-family: 'FontAwesome', sans-serif;
-    }
+	/* fontawesome */
+	[class*="fontawesome-"]:before {
+	  font-family: 'FontAwesome', sans-serif;
+	}
 
-    /* fontawesome */
-    [class*="fontawesome-"]:before {
-      font-family: 'FontAwesome', sans-serif;
-    }
+	section.fancytext {
+		z-index: 99;
+	  position: absolute;
+	  width: 100%;
+	  min-width: 700px;
+	  text-align: center;
+	  top: 25%;
+	  margin-top: -55px;      
 
-    section.fancytext {
-      position: absolute;
-      width: 100%;
-      min-width: 700px;
-      text-align: center;
-      top: 30%;
-      margin-top: -55px;      
-      // margin-left: -200px;
-        h1, h3 {
-          transform: matrix(1, -0.15, 0, 1, 0, 0);
-          -ms-transform: matrix(1, -0.15, 0, 1, 0, 0);
-          -webkit-transform: matrix(1, -0.15, 0, 1, 0, 0);
-        }
+		h1, h3 {
+		  transform: matrix(1, -0.15, 0, 1, 0, 0);
+		  -ms-transform: matrix(1, -0.15, 0, 1, 0, 0);
+		  -webkit-transform: matrix(1, -0.15, 0, 1, 0, 0);
+		}
 
-        h1 {
-          font-family: "Oswald", Sans-serif;
-          text-transform: uppercase;
-          font-weight: 700;
-          font-size: 80px;
-          letter-spacing: 2px;
-          text-shadow: 4px 5px #e6e6d8, 6px 7px #c6a39a;
-          margin-bottom: 25px;
-        }
+		h1 {
+		  font-family: "Oswald", Sans-serif;
+		  text-transform: uppercase;
+		  font-weight: 700;
+		  font-size: 80px;
+		  letter-spacing: 2px;
+		  text-shadow: 4px 5px #e6e6d8, 6px 7px #c6a39a;
+		  margin-bottom: 25px;
+		}
 
-        h1 span {
-          display: inline-block;
-          vertical-align: middle;
-        }
+		h1 span {
+		  display: inline-block;
+		  vertical-align: middle;
+		}
 
-        span.star {
-          font-size: 20px;
-        }
+		span.star {
+		  font-size: 20px;
+		}
 
-        h3.bordered {
-          font-family: "Open Sans", Sans-serif;
-          text-transform: uppercase;
-          font-weight: 700;
-          font-size: 25px;
-          letter-spacing: 0.33em;
-          margin-bottom: 10px;  
-          position: relative;
-        }
+		h3.bordered {
+		  font-family: "Open Sans", Sans-serif;
+		  text-transform: uppercase;
+		  font-weight: 700;
+		  font-size: 25px;
+		  letter-spacing: 0.33em;
+		  margin-bottom: 10px;  
+		  position: relative;
+		}
 
-        h3.bordered:before, h3.bordered:after {
-          content: " ";
-          position: absolute;
-          width: 210px;
-          height: 4px;
-          border-top: 2px solid #121212;
-          border-bottom: 2px solid #121212;
-          padding-bottom: 5px;
-        }
+		h3.bordered:before, h3.bordered:after {
+		  content: " ";
+		  position: absolute;
+		  width: 210px;
+		  height: 4px;
+		  border-top: 2px solid #121212;
+		  border-bottom: 2px solid #121212;
+		  padding-bottom: 5px;
+		}
 
-        h3.bordered:before {
-          margin: 10px 0 0 -226px;
-        }
+		h3.bordered:before {
+		  margin: 10px 0 0 -226px;
+		}
 
-        h3.bordered:after {
-          margin: 10px 0 0 10px;
-        }
+		h3.bordered:after {
+		  margin: 10px 0 0 10px;
+		}
 
-        h3.bordered span {
-          font-size: 18px;
-          letter-spacing: 3px;
-        }
-    }
-
-
-//******************************
-// MAIN
-//******************************
-
-main {
-    max-width: 1000px;
-    padding: 5%;
-    margin: 0 auto;
-    margin-top: 600px;
-}
-
-.box {
-    display: inline-block;
-    width: 30%;
-    background: blue;
-    border: 1px solid transparent;
-    border-radius: 50%;
-    float: left;
-    height: 240px;
-    overflow: hidden;
-    img{
-        width: 100%;
-    }
-    p{
-        margin: 0;
-    }
-}
-
-#recipe {
-    width: 100%;
-}
-
-input{
-    margin: 20px;
-}
+		h3.bordered span {
+		  font-size: 18px;
+		  letter-spacing: 3px;
+		}
+	}
 
 
 //******************************
 // MAIN
 //******************************
 
-.cc-selector input{
-    margin:0;padding:0;
-    -webkit-appearance:none;
-       -moz-appearance:none;
-            appearance:none;
-}
-.visa{background-image:url(http://i.imgur.com/lXzJ1eB.png);}
-.mastercard{background-image:url(http://i.imgur.com/SJbRQF7.png);}
+	main {
 
-.cc-selector input:active +.drinkcard-cc{opacity: .9;}
-.cc-selector input:checked +.drinkcard-cc{
-    -webkit-filter: none;
-       -moz-filter: none;
-            filter: none;
-}
-.drinkcard-cc{
-    cursor:pointer;
-    background-size:contain;
-    background-repeat:no-repeat;
-    display:inline-block;
-    width:100px;height:70px;
-    -webkit-transition: all 100ms ease-in;
-       -moz-transition: all 100ms ease-in;
-            transition: all 100ms ease-in;
-    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
-       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
-            filter: brightness(1.8) grayscale(1) opacity(.7);
-}
-.drinkcard-cc:hover{
-    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
-       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
-            filter: brightness(1.2) grayscale(.5) opacity(.9);
-}
+		max-width: 1000px;
+		padding: 5%;
+		margin: 0 auto;
+
+		h1 {
+
+		   font-family: $fontStack; 
+		}
+	}
+
+	.box {
+		display: inline-block;
+		width: 30%;
+		background: blue;
+		border: 1px solid transparent;
+		border-radius: 50%;
+		float: left;
+		height: 240px;
+		overflow: hidden;
+		img{
+			width: 100%;
+		}
+		p{
+			margin: 0;
+		}
+	}
+
+	#recipe {
+		width: 100%;
+	}
+
+	input{
+		margin: 20px;
+	}
+
+
+//******************************
+// FORM ELEMENTS
+//******************************
+
+	.mood-selector input{
+		margin:0;padding:0;
+		-webkit-appearance:none;
+		   -moz-appearance:none;
+				appearance:none;
+	}
+
+	.mood-selector input:active +.drinkcard-cc{
+		opacity: .9;}
+	.mood-selector input:checked +.drinkcard-cc{
+		-webkit-filter: none;
+		   -moz-filter: none;
+				filter: none;
+	}
+
+	.moodface {
+		fill: $cutegray;
+		width: 100%;
+	}
+
+	.moodface:hover {
+		fill:green;
+	}
+
+	.drinkcard-cc{
+		cursor:pointer;
+		background-size:contain;
+		background-repeat:no-repeat;
+		display:inline-block;
+		width:100px;height:70px;
+		padding-right: 20px;
+		-webkit-transition: all 100ms ease-in;
+		   -moz-transition: all 100ms ease-in;
+				transition: all 100ms ease-in;
+		-webkit-filter: 
+		// brightness(1.8)
+		// grayscale(1)
+		opacity(0.35);
+		   -moz-filter: 
+		   // brightness(1.8)
+		   // grayscale(1)
+		   opacity(0.35);
+				filter: 
+				// brightness(1.8) 
+				// grayscale(1) 
+				opacity(0.35);
+	}
+	.drinkcard-cc:hover{
+		-webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+		   -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+				filter: brightness(1.2) grayscale(.5) opacity(.9);
+	}
 
 /* Extras */
 a:visited{color:#888}
 a{color:#444;text-decoration:none;}
 p{margin-bottom:.3em;}
+
+//******************************
+// FOOTER
+//******************************
+
+footer {
+	background-color: pink;
+	color: white;
+}

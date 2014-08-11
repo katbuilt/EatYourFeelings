@@ -3,16 +3,21 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-.clearfix:after {
-  content: " ";
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both; }
-
 body {
-  background: #e6e6d8 url("https://dl.dropboxusercontent.com/s/t0gu051d08sei65/bg-retro-noise.png");
+  background-color: #fbf6c6;
   color: #121212; }
+
+.container {
+  width: 900px; }
+
+section.headingbg {
+  background: -webkit-linear-gradient(#61aba1, #fbf6c6);
+  background: -webkit-gradient(linear, left top, left bottom, from(#61aba1), to(#fbf6c6));
+  background: linear-gradient(#61aba1, #fbf6c6);
+  height: 350px;
+  display: block;
+  margin: 0;
+  padding: 0; }
 
 /* fontawesome */
 [class*="fontawesome-"]:before {
@@ -23,11 +28,12 @@ body {
   font-family: 'FontAwesome', sans-serif; }
 
 section.fancytext {
+  z-index: 99;
   position: absolute;
   width: 100%;
   min-width: 700px;
   text-align: center;
-  top: 30%;
+  top: 25%;
   margin-top: -55px; }
   section.fancytext h1, section.fancytext h3 {
     transform: matrix(1, -0.15, 0, 1, 0, 0);
@@ -73,8 +79,9 @@ section.fancytext {
 main {
   max-width: 1000px;
   padding: 5%;
-  margin: 0 auto;
-  margin-top: 600px; }
+  margin: 0 auto; }
+  main h1 {
+    font-family: "Oswald", Helvetica, Arial, sans-serif; }
 
 .box {
   display: inline-block;
@@ -96,26 +103,27 @@ main {
 input {
   margin: 20px; }
 
-.cc-selector input {
+.mood-selector input {
   margin: 0;
   padding: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none; }
 
-.visa {
-  background-image: url(http://i.imgur.com/lXzJ1eB.png); }
-
-.mastercard {
-  background-image: url(http://i.imgur.com/SJbRQF7.png); }
-
-.cc-selector input:active + .drinkcard-cc {
+.mood-selector input:active + .drinkcard-cc {
   opacity: .9; }
 
-.cc-selector input:checked + .drinkcard-cc {
+.mood-selector input:checked + .drinkcard-cc {
   -webkit-filter: none;
   -moz-filter: none;
   filter: none; }
+
+.moodface {
+  fill: #524e4f;
+  width: 100%; }
+
+.moodface:hover {
+  fill: green; }
 
 .drinkcard-cc {
   cursor: pointer;
@@ -124,11 +132,12 @@ input {
   display: inline-block;
   width: 100px;
   height: 70px;
+  padding-right: 20px;
   -webkit-transition: all 100ms ease-in;
   transition: all 100ms ease-in;
-  -webkit-filter: brightness(1.8) grayscale(1) opacity(0.7);
-  -moz-filter: brightness(1.8) grayscale(1) opacity(0.7);
-  filter: brightness(1.8) grayscale(1) opacity(0.7); }
+  -webkit-filter: opacity(0.35);
+  -moz-filter: opacity(0.35);
+  filter: opacity(0.35); }
 
 .drinkcard-cc:hover {
   -webkit-filter: brightness(1.2) grayscale(0.5) opacity(0.9);
@@ -145,3 +154,7 @@ a {
 
 p {
   margin-bottom: .3em; }
+
+footer {
+  background-color: pink;
+  color: white; }

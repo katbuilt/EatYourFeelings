@@ -5,9 +5,8 @@
 		<title>Eat your feelings | :) :( :D :0 :P</title>
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
-		<link href="http://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css">
 		<link href="http://weloveiconfonts.com/api/?family=fontawesome" rel="stylesheet" type="text/css">
-
+		<link href="http://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css">
 </head>
 <body>
 	
@@ -15,55 +14,79 @@
 	<section class="fancytext">
 	  <h3 class="bordered">treat yo' self</h3>
 	  <h1><span class="fontawesome-star star"></span> <span>Eat Your Feelings</span> <span class="fontawesome-star star"></span></h1>
-	  <h3 class="bordered"><span>select a mood to begin</span></h3>
+	  <h3 class="bordered"><span>select a mood to begin!</span></h3>
+	</section>
+
+	<section class="headingbg">
 	</section>
 	<main>
-
-
-	<!-- query form -->
+		<div class="container">
+	
 		<form id="#eatfeelsform" name="eatfeels">
+			<div class="mood-selector">
+					<input class="moodpick" id="visa" type="radio" name="usermood" value="sad" />
+					<label class="drinkcard-cc visa" for="visa">
+						<!-- <img src="http://i.imgur.com/lXzJ1eB.png"> -->
+						<!-- SAD FACE SVG -->
+							<svg class="moodface" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" height="100px" width="100px">
+							<path d="M50,4c25.365,0,46,20.636,46,46S75.365,96,50,96S4,75.364,4,50S24.635,4,50,4L50,4z M50,0C22.386,0,0,22.386,0,50  s22.386,50,50,50s50-22.386,50-50S77.614,0,50,0L50,0z"/>
+							<path d="M30,42c-6.617,0-12-5.383-12-12c0-1.104,0.896-2,2-2s2,0.896,2,2c0,4.411,3.589,8,8,8s8-3.589,8-8c0-1.104,0.896-2,2-2  s2,0.896,2,2C42,36.617,36.617,42,30,42z"/>
+							<path d="M70,42c-6.617,0-12-5.383-12-12c0-1.104,0.896-2,2-2s2,0.896,2,2c0,4.411,3.589,8,8,8s8-3.589,8-8c0-1.104,0.896-2,2-2  s2,0.896,2,2C82,36.617,76.617,42,70,42z"/>
+							<path d="M70,77c-1.104,0-2-0.896-2-2c0-9.925-8.075-18-18-18s-18,8.075-18,18c0,1.104-0.896,2-2,2s-2-0.896-2-2  c0-12.131,9.869-22,22-22s22,9.869,22,22C72,76.104,71.104,77,70,77z"/>
+						</svg>
+					</label>
+					<input class="moodpick" id="mastercard" type="radio" name="usermood" value="happy" />
+					<label class="drinkcard-cc mastercard"for="mastercard">
+						<!-- <img src="http://i.imgur.com/SJbRQF7.png"> -->
+						<!-- HAPPY SVG -->
+							<svg class="moodface" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" height="100px" width="100px">
+							<path d="M50,4c25.364,0,46,20.636,46,46S75.364,96,50,96S4,75.364,4,50S24.636,4,50,4L50,4z M50,0C22.386,0,0,22.386,0,50  s22.386,50,50,50s50-22.386,50-50S77.614,0,50,0L50,0z"/>
+							<path d="M40,42c-1.104,0-2-0.896-2-2c0-4.411-3.589-8-8-8s-8,3.589-8,8c0,1.104-0.896,2-2,2s-2-0.896-2-2c0-6.617,5.383-12,12-12  s12,5.383,12,12C42,41.104,41.104,42,40,42z"/>
+							<path d="M80,42c-1.104,0-2-0.896-2-2c0-4.411-3.589-8-8-8s-8,3.589-8,8c0,1.104-0.896,2-2,2s-2-0.896-2-2c0-6.617,5.383-12,12-12  s12,5.383,12,12C82,41.104,81.104,42,80,42z"/>
+							<path d="M50,82c-17.645,0-32-14.355-32-32c0-1.104,0.896-2,2-2s2,0.896,2,2c0,15.439,12.561,28,28,28s28-12.561,28-28  c0-1.104,0.896-2,2-2s2,0.896,2,2C82,67.645,67.645,82,50,82z"/>
+							</svg>
+					</label>
+				
 
-		<input type="radio" name="usermood" value="sad" /> sad :(
-		<input type="radio" name="usermood" value="happy" /> happy :)
-		
-		<h3>How many people?</h3>
-		<input type="range" name="personslider" id="servingsize" min="1" max="3" value="1">
-		
-		<h3>How much effort</h3>
-		<input type="radio" name="preptime" value="600" /> lazy &lt; 10 minutes
-		<input type="radio" name="preptime" value="1800" /> around half an hour
-		<input type="radio" name="preptime" value="5400" /> work it
+	<!-- 
+			<input type="radio" name="usermood" value="sad" /> sad :(
+			<input type="radio" name="usermood" value="happy" /> happy :) -->
+			</div> 
+
+			<h3>How many people?</h3>
+			<input type="range" name="personslider" id="servingsize" min="1" max="3" value="1">
+			
+			<h3>How much effort</h3>
+			<input type="radio" name="preptime" value="600" /> lazy &lt; 10 minutes
+			<input type="radio" name="preptime" value="1800" /> around half an hour
+			<input type="radio" name="preptime" value="5400" /> work it
 
 
-		<h3>Ok click to submit</h3>
-		<button name="pushit" id="#eatmyfeels" value="submit">Push it</button>
-		<input type="reset" name="pullit" value="lets reset">
-<!-- 			<p>Previously:</p>
-			<div>
-				<input id="a1" type="radio" name="a" value="visa" />
-				<label for="a1">Visa</label><br/>
-				<input id="a2" type="radio" name="a" value="mastercard" />
-				<label for="a2">Mastercard</label>
-			</div>
-			<p>Now, with CSS3: </p>
-			<div class="cc-selector">
-				<input id="visa" type="radio" name="credit-card" value="visa" />
-				<label class="drinkcard-cc visa" for="visa"></label>
-				<input id="mastercard" type="radio" name="credit-card" value="mastercard" />
-				<label class="drinkcard-cc mastercard"for="mastercard"></label>
-			</div> -->
+			<h3>Ok click to submit</h3>
+			<button name="pushit" id="#eatmyfeels" value="submit">Push it</button>
+			<input type="reset" name="pullit" value="lets reset">
+			
 		</form>
+	</div>
 	<!-- images and names return here -->
+	<section class="clearfix">
 		<div class="results" id="results">
 
 		</div>
-
+	</section>
 	
 </main>
+
+<footer>
+
+	Using the Yummly API.
+	Icons by: <a href="http://www.thenounproject.com/cengizsari" target="_blank">Cengiz SARI</a> via <a href="http://www.thenounproject.com/" target="blank">The Noun Project</a>.
+</footer>
 
 <!-- SCRIPTS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="js/app.js"></script>
+	<script src="jquery-scrollto/lib/jquery-scrollto.js"></script>
 </body>
 
 </html>
