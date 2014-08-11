@@ -110,9 +110,50 @@
 			</div>
 			
 			<h2>How much effort?</h2>
-			<input type="radio" name="preptime" value="600" /> lazy.
-			<input type="radio" name="preptime" value="1800" /> meh
-			<input type="radio" name="preptime" value="5400" /> yeah!
+
+			<div class="prepselector clearfix">
+			<table>
+				<tr>
+					<td>
+						<label class="" for="lazy">
+							<img class="img3" src="images/lazy.png" alt="lazy"><br>
+						</label>
+						<input class="preptime" type="radio" name="preptime" value="600"/> &nbsp;<span class="preplabel">LAZY!</span>
+					</td>
+					<td>
+						<label class="" for="meh">
+							<img class="img3" src="images/shruf.png" alt="MEH"><br>
+						</label>
+						<input class="preptime" type="radio" name="preptime" value="1700"/> &nbsp;<span class="preplabel">MEH.</span>
+					</td>
+					<td>
+					<label class="" for="enthusiastic">
+						<img class="img3" src="images/chef.png" alt="i really feel like cooking"><br>
+					</label>
+					<input class="preptime" type="radio" name="preptime" value="7000"/> &nbsp;<span class="preplabel">YEAH!</span>
+					</td>
+				</tr>
+			</table>
+			<!-- 	<div class="third">
+					<label class="" for="lazy">
+						<img class="img3" src="images/lazy.png" alt="lazy"><br>
+					</label>
+					<input class="preptime" type="radio" name="preptime" value="600"/><span class="preplabel">LAZY!</span>
+				</div>
+
+				<div class="third">
+					<label class="" for="meh">
+						<img class="img3" src="images/shruf.png" alt="MEH"><br>
+					</label>
+					<input class="preptime" type="radio" name="preptime" value="1700"/><span class="preplabel">MEH.</span>
+				</div>
+
+				<div class="third clearfix">
+					<label class="" for="enthusiastic">
+						<img class="img3" src="images/chef.png" alt="i really feel like cooking"><br>
+					</label>
+					<input class="preptime" type="radio" name="preptime" value="7000"/><span class="preplabel">GO FOR IT!</span> -->
+				</div>
 
 
 			<h2>Ready?</h2>
@@ -121,16 +162,14 @@
 		</form>
 	</div>
 	<!-- images and names return here -->
-	<section class="clearfix">
+	<section class="eatyrfeels clearfix">
 		<div class="results clearfix" id="results" style="display:block;">
 
 		</div>
 
-		<div class="clearfix"> &nbsp;</div>
-
-		<p>	Using the Yummly API.
+<!-- 		<p>	Using the Yummly API.
 			Icons by: <a href="http://www.thenounproject.com/cengizsari" target="_blank">Cengiz SARI</a> via <a href="http://www.thenounproject.com/" target="blank">The Noun Project</a>.
-		</p>
+		</p> -->
 	</section>
 	
 </main>

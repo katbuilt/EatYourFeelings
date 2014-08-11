@@ -143,6 +143,7 @@ body {
 
 		h2 {
 			margin-top: 225px;
+			margin-bottom: 30px;
 			font-size: 36px;
 		}
 
@@ -162,40 +163,6 @@ body {
 			letter-spacing: 2px;
 		}
 	}
-
-	.box {
-		display: inline-block;
-		width: 30%;
-		background: blue;
-		border: 1px solid transparent;
-		border-radius: 50%;
-		float: left;
-		height: 240px;
-		overflow: hidden;
-		img{
-			width: 100%;
-		}
-
-		p{
-			margin: 0;
-		}
-	}
-
-	.box:last-of-type::after {
-		content: " ";
-		visibility: hidden;
-		display: block;
-		height: 0;
-		clear: both;
-	}
-
-	#recipe {
-		width: 100%;
-	}
-
-	// input{
-	// 	margin: 20px;
-	// }
 
 
 //******************************
@@ -228,6 +195,7 @@ body {
 		   -moz-filter: none;
 				filter: none;
 	}
+
 
 	.drinkcard-cc{
 		cursor:pointer;
@@ -272,12 +240,16 @@ body {
 
 	.slider {
 	  width: 100%;
-	  margin: 0 auto;
+
 	}
 
 	input[type="range"] {
 	  -webkit-appearance: none !important;
 	  width: 100%;
+	  margin-top: 20px;
+	  margin-bottom:30px;
+	  margin-left: auto;
+	  margin-right: auto;
 	  height: 15px;
 	  background-color: $cream;
 	  border: 2px dotted $cutegray;
@@ -303,6 +275,46 @@ body {
 	}
 	input[type="range"]::-webkit-slider-thumb:active {
 	  box-shadow: 0px 0px 1px #3c6d59;
+	}
+
+	// effort level radios
+
+	.prepselector {
+		display: block;
+
+	}
+
+	table {
+		border: 0;
+		padding: 0;
+		margin: 0 auto;
+
+		tr td {
+			width:130px;
+			padding: 6px;
+			text-align: center;
+		}
+	}
+
+
+	.third {
+		width: 130px;
+		margin: 0;
+		padding: 4px;
+		display: inline;
+	}
+
+	.img3 {
+		width: 110px;
+	}
+
+	span.preplabel {
+		font-family: "Open Sans", Sans-serif;
+		font-weight: 700;
+		font-size: 20px;
+		position: relative;
+		bottom: -4px;
+		letter-spacing: 2px;
 	}
 
 	// submit button
@@ -333,6 +345,54 @@ body {
 		box-shadow: 10px 10px $gradientup;
 	}
 
+//******************************
+// SEARCH RESULTS
+//******************************
+
+.eatyrfeels	{
+	margin-top: 150px;
+}
+
+a.recipelink, a.recipelink:visited, a.recipelink:active {
+	text-decoration: none;
+	border: 0;
+}
+
+.box {
+	display: inline-block;
+	width: 30%;
+	background: blue;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	float: left;
+	height: 140px;
+	overflow: hidden;
+	img{
+		width: 100%;
+	}
+
+	p{
+		margin: 0;
+	}
+}
+
+div.box:last-of-type::after {
+	content: " ";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+#recipe {
+	width: 100%;
+}
+
+.results {
+	border-radius: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
 
 //******************************
 // FOOTER

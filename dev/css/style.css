@@ -85,10 +85,10 @@ main {
   margin: 0 auto; }
   main h1, main h2, main h3 {
     text-transform: uppercase;
-    font-family: "Oswald", Helvetica, Arial, sans-serif;
-    margin: 40px 0; }
+    font-family: "Oswald", Helvetica, Arial, sans-serif; }
   main h2 {
     margin-top: 225px;
+    margin-bottom: 30px;
     font-size: 36px; }
   main .minititle {
     font-size: 20px;
@@ -100,30 +100,6 @@ main {
     font-weight: 700;
     font-size: 20px;
     letter-spacing: 2px; }
-
-.box {
-  display: inline-block;
-  width: 30%;
-  background: blue;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  float: left;
-  height: 240px;
-  overflow: hidden; }
-  .box img {
-    width: 100%; }
-  .box p {
-    margin: 0; }
-
-.box:last-of-type::after {
-  content: " ";
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both; }
-
-#recipe {
-  width: 100%; }
 
 .mood-selector {
   text-align: center;
@@ -176,12 +152,15 @@ main {
   text-align: center; }
 
 .slider {
-  width: 100%;
-  margin: 0 auto; }
+  width: 100%; }
 
 input[type="range"] {
   -webkit-appearance: none !important;
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
   height: 15px;
   background-color: #fffed8;
   border: 2px dotted #524e4f;
@@ -211,6 +190,35 @@ input[type="range"]::-webkit-slider-thumb:active {
   -webkit-box-shadow: 0px 0px 1px #3c6d59;
           box-shadow: 0px 0px 1px #3c6d59; }
 
+.prepselector {
+  display: block; }
+
+table {
+  border: 0;
+  padding: 0;
+  margin: 0 auto; }
+  table tr td {
+    width: 130px;
+    padding: 6px;
+    text-align: center; }
+
+.third {
+  width: 130px;
+  margin: 0;
+  padding: 4px;
+  display: inline; }
+
+.img3 {
+  width: 110px; }
+
+span.preplabel {
+  font-family: "Open Sans", Sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  position: relative;
+  bottom: -4px;
+  letter-spacing: 2px; }
+
 form button {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out; }
@@ -232,6 +240,42 @@ form button:hover, form button:focus {
   background: #fbf6c6;
   -webkit-box-shadow: 10px 10px #61aba1;
           box-shadow: 10px 10px #61aba1; }
+
+.eatyrfeels {
+  margin-top: 150px; }
+
+a.recipelink, a.recipelink:visited, a.recipelink:active {
+  text-decoration: none;
+  border: 0; }
+
+.box {
+  display: inline-block;
+  width: 30%;
+  background: blue;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  float: left;
+  height: 140px;
+  overflow: hidden; }
+  .box img {
+    width: 100%; }
+  .box p {
+    margin: 0; }
+
+div.box:last-of-type::after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
+#recipe {
+  width: 100%; }
+
+.results {
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px; }
 
 footer {
   background-color: pink;
