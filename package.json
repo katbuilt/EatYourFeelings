@@ -1,0 +1,32 @@
+{
+  "name": "EatYourFeelings",
+  "version": "0.0.0",
+  "description": "Treat Yo'self. Eat your feelings by searching the Yummly API.",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/katbuilt/EatYourFeelings.git"
+  },
+  "keywords": [
+    "feelings",
+    "eating",
+    "Yummly"
+  ],
+  "author": "Kat Bautista - KatBuilt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katbuilt/EatYourFeelings/issues"
+  },
+  "homepage": "https://github.com/katbuilt/EatYourFeelings",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^0.8.2",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-recess": "^0.7.0"
+  }
+}
