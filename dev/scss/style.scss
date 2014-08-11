@@ -323,7 +323,6 @@ body {
 		-webkit-transition: all 0.5s ease-in-out;
 		   -moz-transition: all 0.5s ease-in-out;
 				transition: all 0.5s ease-in-out;
-	
 	}
 
 	form button {
@@ -350,30 +349,65 @@ body {
 //******************************
 
 .eatyrfeels	{
-	margin-top: 150px;
+	position: relative;
 }
 
-a.recipelink, a.recipelink:visited, a.recipelink:active {
-	text-decoration: none;
-	border: 0;
+.results {
+	position: relative;
+
+	a:link, a:visited {
+		text-decoration: none;
+		border: 0;
+		color: #000;
+	}
+
+	a:hover, a:active, a:visited:hover {
+		box-shadow: 10px 10px $gradientup;
+		top: -5px;
+		left: -5px;
+		
+	}
 }
 
 .box {
-	display: inline-block;
-	width: 30%;
-	background: blue;
-	border: 1px solid transparent;
+	display: inline-block !important;
+	width: 200px;
+	border: 1px dotted $cutegray;
+	margin-left: 10px;
+	margin-top: 15px;
+	background-color: #fff;
+	border: 0;
 	border-radius: 10px;
-	float: left;
-	height: 140px;
+	// float: left;
+	height: 200px;
 	overflow: hidden;
+
+	-webkit-transition: all 0.5s linear;
+	   -moz-transition: all 0.5s linear;
+			transition: all 0.5s linear;
+
 	img{
 		width: 100%;
 	}
 
 	p{
 		margin: 0;
+		margin-left: 10px;
+		margin-right: 10px;
+		font-family: $fontStack;
+		font-weight: 700;
+		color: #000;
+		line-height: 20px;
+		font-size:18px;
 	}
+}
+
+.imgclip {
+	height: 150px;
+	width:100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 }
 
 div.box:last-of-type::after {
@@ -388,11 +422,7 @@ div.box:last-of-type::after {
 	width: 100%;
 }
 
-.results {
-	border-radius: 10px;
-	margin-left: 5px;
-	margin-right: 5px;
-}
+
 
 //******************************
 // FOOTER

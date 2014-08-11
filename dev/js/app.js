@@ -186,7 +186,7 @@ var eatFeels = {};
 					console.log('searching for lonely sadness');
 
 					$.ajax({
-					   url: 'http://api.yummly.com/v1/api/recipes?'+'&maxTotalTimeInSeconds='+userTime,
+					   url: 'http://api.yummly.com/v1/api/recipes?'+'allowedCourse=course%5Ecourse-Desserts'+'&maxTotalTimeInSeconds='+userTime,
 					   type: 'GET',
 					   data: {
 					     format: 'jsonp',
@@ -226,8 +226,8 @@ var eatFeels = {};
 	eatFeels.displayInfo=function(data){
 
 	for(var i=0; i<data.matches.length; i++){
-		$('.results').append('<a class="recipelink" href="http://www.yummly.com/recipe/'+ data.matches[i].id + '" target="_blank"><div class="box box' + i + '"></div></a>');
-		$('.box' + i).append('<img src=' + data.matches[i].smallImageUrls[0].replace('=s90','') + '><p>' + data.matches[i].recipeName + '</p>');
+		$('.results').append('<a href="http://www.yummly.com/recipe/'+ data.matches[i].id + '" target="_blank"><div class="box box' + i + '"></div></a>');
+		$('.box' + i).append('<div class="imgclip"><img src=' + data.matches[i].smallImageUrls[0].replace('=s90','') + '></div><p>' + data.matches[i].recipeName + '</p>');
 		// $('.results').append('<p>' + data.matches[i].recipeName + '</p>');
 		}
 	};
