@@ -8,13 +8,16 @@ body {
   color: #121212; }
 
 .container {
-  width: 900px; }
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 3%; }
 
 section.headingbg {
   background: -webkit-linear-gradient(#61aba1, #fbf6c6);
   background: -webkit-gradient(linear, left top, left bottom, from(#61aba1), to(#fbf6c6));
   background: linear-gradient(#61aba1, #fbf6c6);
-  height: 350px;
+  height: 305px;
   display: block;
   margin: 0;
   padding: 0; }
@@ -77,11 +80,26 @@ section.fancytext {
     letter-spacing: 3px; }
 
 main {
-  max-width: 1000px;
+  text-align: center;
   padding: 5%;
   margin: 0 auto; }
-  main h1 {
-    font-family: "Oswald", Helvetica, Arial, sans-serif; }
+  main h1, main h2, main h3 {
+    text-transform: uppercase;
+    font-family: "Oswald", Helvetica, Arial, sans-serif;
+    margin: 40px 0; }
+  main h2 {
+    margin-top: 225px;
+    font-size: 36px; }
+  main .minititle {
+    font-size: 20px;
+    text-transform: uppercase; }
+  main .ministar {
+    font-size: 15px; }
+  main h3 {
+    font-family: "Open Sans", Sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 2px; }
 
 .box {
   display: inline-block;
@@ -97,11 +115,22 @@ main {
   .box p {
     margin: 0; }
 
+.box:last-of-type::after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
 #recipe {
   width: 100%; }
 
-input {
-  margin: 20px; }
+.mood-selector {
+  text-align: center;
+  margin-bottom: 50px; }
+
+.orthing {
+  margin-left: 15px; }
 
 .mood-selector input {
   margin: 0;
@@ -111,50 +140,100 @@ input {
   appearance: none; }
 
 .mood-selector input:active + .drinkcard-cc {
-  opacity: .9; }
+  opacity: 1; }
 
 .mood-selector input:checked + .drinkcard-cc {
   -webkit-filter: none;
   -moz-filter: none;
   filter: none; }
 
-.moodface {
-  fill: #524e4f;
-  width: 100%; }
-
-.moodface:hover {
-  fill: green; }
-
 .drinkcard-cc {
   cursor: pointer;
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
-  width: 100px;
-  height: 70px;
-  padding-right: 20px;
-  -webkit-transition: all 100ms ease-in;
-  transition: all 100ms ease-in;
+  width: 200px;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
   -webkit-filter: opacity(0.35);
   -moz-filter: opacity(0.35);
   filter: opacity(0.35); }
 
 .drinkcard-cc:hover {
-  -webkit-filter: brightness(1.2) grayscale(0.5) opacity(0.9);
-  -moz-filter: brightness(1.2) grayscale(0.5) opacity(0.9);
-  filter: brightness(1.2) grayscale(0.5) opacity(0.9); }
+  -webkit-filter: brightness(1.2) grayscale(0.5) opacity(1);
+  -moz-filter: brightness(1.2) grayscale(0.5) opacity(1);
+  filter: brightness(1.2) grayscale(0.5) opacity(1);
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out; }
 
-/* Extras */
-a:visited {
-  color: #888; }
+.rangecontain {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 350px;
+  margin: auto;
+  text-align: center; }
 
-a {
-  color: #444;
-  text-decoration: none; }
+.slider {
+  width: 100%;
+  margin: 0 auto; }
 
-p {
-  margin-bottom: .3em; }
+input[type="range"] {
+  -webkit-appearance: none !important;
+  width: 100%;
+  height: 15px;
+  background-color: #fffed8;
+  border: 2px dotted #524e4f;
+  border-radius: 10px;
+  outline: 0;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease; }
+
+input[type="range"]:hover {
+  background-color: #61aba1; }
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  width: 20px;
+  height: 20px;
+  background-color: #524e4f;
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 0px 3px #3c6d59;
+          box-shadow: 0px 0px 3px #3c6d59;
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background-color: #524e4f; }
+
+input[type="range"]::-webkit-slider-thumb:active {
+  -webkit-box-shadow: 0px 0px 1px #3c6d59;
+          box-shadow: 0px 0px 1px #3c6d59; }
+
+form button {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+
+form button {
+  border: 2px dotted #524e4f;
+  border-radius: 10px;
+  background: #fbf6c6;
+  outline: 0;
+  font-family: "Open Sans", Sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: 0.33em;
+  width: 60%;
+  padding: 10px; }
+
+form button:hover, form button:focus {
+  background: #fbf6c6;
+  -webkit-box-shadow: 10px 10px #61aba1;
+          box-shadow: 10px 10px #61aba1; }
 
 footer {
   background-color: pink;
-  color: white; }
+  color: white;
+  display: block; }

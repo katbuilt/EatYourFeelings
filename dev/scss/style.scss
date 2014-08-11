@@ -28,7 +28,10 @@ body {
 }
 
 .container {
-	width: 900px;
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 15%;
+	padding: 3%;
 }
 
 //******************************
@@ -39,7 +42,7 @@ body {
 		background: -moz-linear-gradient($gradientup, $gradientdown);
 		background: -webkit-linear-gradient($gradientup, $gradientdown);
 		background: linear-gradient($gradientup, $gradientdown);
-		height: 350px;
+		height: 305px;
 		display: block;
 		margin: 0;
 		padding: 0;
@@ -128,14 +131,35 @@ body {
 //******************************
 
 	main {
-
-		max-width: 1000px;
+		text-align: center;
 		padding: 5%;
 		margin: 0 auto;
 
-		h1 {
-
+		h1, h2, h3 {
+			text-transform: uppercase;
 		   font-family: $fontStack; 
+
+		}
+
+		h2 {
+			margin-top: 225px;
+			font-size: 36px;
+		}
+
+		.minititle {
+			font-size: 20px;
+			text-transform: uppercase;
+		}
+
+		.ministar {
+			font-size: 15px;
+		}
+
+		h3 {
+			font-family: "Open Sans", Sans-serif;
+			font-weight: 700;
+			font-size: 20px;
+			letter-spacing: 2px;
 		}
 	}
 
@@ -151,46 +175,58 @@ body {
 		img{
 			width: 100%;
 		}
+
 		p{
 			margin: 0;
 		}
+	}
+
+	.box:last-of-type::after {
+		content: " ";
+		visibility: hidden;
+		display: block;
+		height: 0;
+		clear: both;
 	}
 
 	#recipe {
 		width: 100%;
 	}
 
-	input{
-		margin: 20px;
-	}
+	// input{
+	// 	margin: 20px;
+	// }
 
 
 //******************************
 // FORM ELEMENTS
 //******************************
 
+	// Mood selector
+	.mood-selector {
+		text-align: center;
+		margin-bottom: 50px;
+	}
+
+	.orthing {
+		margin-left: 15px;
+	}
+
 	.mood-selector input{
-		margin:0;padding:0;
+		margin:0;
+		padding:0;
+
 		-webkit-appearance:none;
 		   -moz-appearance:none;
 				appearance:none;
 	}
 
 	.mood-selector input:active +.drinkcard-cc{
-		opacity: .9;}
+		opacity: 1;}
 	.mood-selector input:checked +.drinkcard-cc{
 		-webkit-filter: none;
 		   -moz-filter: none;
 				filter: none;
-	}
-
-	.moodface {
-		fill: $cutegray;
-		width: 100%;
-	}
-
-	.moodface:hover {
-		fill:green;
 	}
 
 	.drinkcard-cc{
@@ -198,11 +234,11 @@ body {
 		background-size:contain;
 		background-repeat:no-repeat;
 		display:inline-block;
-		width:100px;height:70px;
-		padding-right: 20px;
-		-webkit-transition: all 100ms ease-in;
-		   -moz-transition: all 100ms ease-in;
-				transition: all 100ms ease-in;
+		width:200px;
+
+		-webkit-transition: all 0.4s linear;
+		   -moz-transition: all 0.4s linear;
+				transition: all 0.4s linear;
 		-webkit-filter: 
 		// brightness(1.8)
 		// grayscale(1)
@@ -217,15 +253,86 @@ body {
 				opacity(0.35);
 	}
 	.drinkcard-cc:hover{
-		-webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
-		   -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
-				filter: brightness(1.2) grayscale(.5) opacity(.9);
+		-webkit-filter: brightness(1.2) grayscale(0.5) opacity(1);
+		   -moz-filter: brightness(1.2) grayscale(0.5) opacity(1);
+				filter: brightness(1.2) grayscale(0.5) opacity(1);
+		-webkit-transition: all 1s ease-in-out;
+		   -moz-transition: all 1s ease-in-out;
+				transition: all 1s ease-in-out;
 	}
 
-/* Extras */
-a:visited{color:#888}
-a{color:#444;text-decoration:none;}
-p{margin-bottom:.3em;}
+	// range slider
+
+	.rangecontain {
+	  display: flex;
+	  width: 350px;
+	  margin: auto;
+	  text-align: center;
+	}
+
+	.slider {
+	  width: 100%;
+	  margin: 0 auto;
+	}
+
+	input[type="range"] {
+	  -webkit-appearance: none !important;
+	  width: 100%;
+	  height: 15px;
+	  background-color: $cream;
+	  border: 2px dotted $cutegray;
+	  border-radius: 10px;
+	  outline: 0;
+	  transition: all 0.3s ease;
+	}
+	input[type="range"]:hover {
+	  background-color: $gradientup;
+	}
+
+	input[type="range"]::-webkit-slider-thumb {
+	  -webkit-appearance: none !important;
+	  width: 20px;
+	  height: 20px;
+	  background-color: $cutegray;
+	  border-radius: 30px;
+	  box-shadow: 0px 0px 3px #3c6d59;
+	  transition: all 0.5s ease;
+	}
+	input[type="range"]::-webkit-slider-thumb:hover {
+	  background-color: $cutegray;
+	}
+	input[type="range"]::-webkit-slider-thumb:active {
+	  box-shadow: 0px 0px 1px #3c6d59;
+	}
+
+	// submit button
+
+	form button {
+		-webkit-transition: all 0.5s ease-in-out;
+		   -moz-transition: all 0.5s ease-in-out;
+				transition: all 0.5s ease-in-out;
+	
+	}
+
+	form button {
+		border: 2px dotted $cutegray;
+		border-radius: 10px;
+		background: $gradientdown;
+		outline: 0;
+		font-family: "Open Sans", Sans-serif;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 25px;
+		letter-spacing: 0.33em;
+		width: 60%;
+		padding: 10px;
+	}
+
+	form button:hover, form button:focus {
+		background: $gradientdown;
+		box-shadow: 10px 10px $gradientup;
+	}
+
 
 //******************************
 // FOOTER
@@ -234,4 +341,5 @@ p{margin-bottom:.3em;}
 footer {
 	background-color: pink;
 	color: white;
+	display: block;
 }

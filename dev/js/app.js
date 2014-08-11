@@ -53,7 +53,7 @@ var eatFeels = {};
 					   	 _app_id: eatFeels.appID,
 					   	 _app_key: eatFeels.authKey,
 					   	 rating: 5,
-					   	 maxResult: 12,
+					   	 maxResult: 9,
 						 requirePictures: true,
 						 q: 'party'
 					   },
@@ -80,7 +80,7 @@ var eatFeels = {};
 					   	 _app_id: eatFeels.appID,
 					   	 _app_key: eatFeels.authKey,
 					   	 rating: 5,
-					   	 maxResult: 12,
+					   	 maxResult: 9,
 						 requirePictures: true,
 						 q: 'comfort'
 
@@ -108,7 +108,7 @@ var eatFeels = {};
 					   	 _app_id: eatFeels.appID,
 					   	 _app_key: eatFeels.authKey,
 					   	 rating: 5,
-					   	 maxResult: 12,
+					   	 maxResult: 9,
 						 requirePictures: true,
 						 q: 'date night'
 
@@ -136,7 +136,7 @@ var eatFeels = {};
 					   	 _app_id: eatFeels.appID,
 					   	 _app_key: eatFeels.authKey,
 					   	 rating: 5,
-					   	 maxResult: 12,
+					   	 maxResult: 9,
 						 requirePictures: true,
 						 q: 'for two',
 
@@ -165,7 +165,7 @@ var eatFeels = {};
 					   	 _app_id: eatFeels.appID,
 					   	 _app_key: eatFeels.authKey,
 					   	 rating: 5,
-					   	 maxResult: 12,
+					   	 maxResult: 9,
 						 requirePictures: true,
 						 q: 'for one'
 
@@ -193,7 +193,7 @@ var eatFeels = {};
 					   	 _app_id: eatFeels.appID,
 					   	 _app_key: eatFeels.authKey,
 					   	 rating: 5,
-					   	 maxResult: 12,
+					   	 maxResult: 9,
 						 requirePictures: true,
 						 q: 'better than'
 
