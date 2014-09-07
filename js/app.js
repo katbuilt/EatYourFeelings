@@ -212,7 +212,7 @@ var eatFeels = {};
 			// or else you LEFT A FIELD BLANK, BRO
 			} else {
 
-				alert('you missed a field! check your fields again.');
+				alert('You missed a spot! Check that you answered all the prompts please.');
 				$('.results').empty();
 
 			}
